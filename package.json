@@ -1,0 +1,25 @@
+{
+  "name": "userlibrary",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./public/style/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.6",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.2",
+    "tailwindcss": "^4.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

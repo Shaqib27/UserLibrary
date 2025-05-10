@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style/output.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-600">
+    <h1 class="text-2xl text-yellow-600 text-center mt-6">User Page</h1>
+    <a href="/" class="text-blue-400 ml-10">Back to Home</a>
+    <div class="flex flex-wrap gap-6 p-6">
+        <!-- Card Start -->
+        <% if(user.length >0) {%>
+        <% user.forEach((user)=>{ %>
+        <div class="w-64 bg-teal-600 shadow-md rounded-xl overflow-hidden">
+            <img src="<%=user.ImageURl%>" alt="Profile Image" class="w-full h-52 object-top">
+            <div class="p-4 space-y-2">
+                <h2 class="text-lg font-semibold text-gray-800"><%=user.name%></h2>
+                <h4 class="text-sm text-gray-600"><%=user.email%></h4>
+                <div class="flex justify-between mt-4">
+                    <a href="#" class="text-sm px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700">
+                        Edit
+                    </a>
+                    <a href="/delete/<%= user._id %>"
+                        class="text-sm px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">
+                        Delete
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <%})%>
+        <%} else {%>
+        <h2 class="text-gray-500 text-center ml-10">No user found</h2>
+        <%}%>   
+        <!-- Card End -->
+    </div>
+
+
+
+</body>
+
+</html>
